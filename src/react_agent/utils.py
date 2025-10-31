@@ -1,5 +1,7 @@
 """Utility & helper functions."""
 
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
 from langchain.chat_models import init_chat_model
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import BaseMessage
@@ -27,14 +29,14 @@ def load_chat_model(fully_specified_name: str) -> BaseChatModel:
     return init_chat_model(model, model_provider=provider)
 
 
-# # Gmail 읽기/전송용 스코프
-# SCOPES = [
-#     "https://www.googleapis.com/auth/gmail.readonly",
-#     "https://www.googleapis.com/auth/gmail.send",
-# ]
+# Gmail 읽기/전송용 스코프
+SCOPES = [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.send",
+]
 
 
-# def get_service():
-#     flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
-#     creds = flow.run_local_server(port=0)
-#     return build("gmail", "v1", credentials=creds)
+def get_service():
+    flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+    creds = flow.run_local_server(port=0)
+    return build("gmail", "v1", credentials=creds)
