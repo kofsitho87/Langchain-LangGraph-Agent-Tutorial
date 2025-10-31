@@ -25,3 +25,16 @@ def load_chat_model(fully_specified_name: str) -> BaseChatModel:
     """
     provider, model = fully_specified_name.split("/", maxsplit=1)
     return init_chat_model(model, model_provider=provider)
+
+
+# # Gmail 읽기/전송용 스코프
+# SCOPES = [
+#     "https://www.googleapis.com/auth/gmail.readonly",
+#     "https://www.googleapis.com/auth/gmail.send",
+# ]
+
+
+# def get_service():
+#     flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+#     creds = flow.run_local_server(port=0)
+#     return build("gmail", "v1", credentials=creds)

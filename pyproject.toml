@@ -10,9 +10,15 @@ license = { text = "MIT" }
 requires-python = ">=3.11,<4.0"
 dependencies = [
     "crawl4ai>=0.7.6",
+    "gcsa>=2.6.0",
+    "google-api-python-client>=2.186.0",
+    "google-auth-httplib2>=0.2.1",
+    "google-auth-oauthlib>=1.2.3",
     "langchain>=1.0.3",
     "langchain-openai>=1.0.1",
+    "langchain-tavily>=0.2.12",
     "langgraph>=1.0.2",
+    "yagmail>=0.15.293",
 ]
 
 
@@ -63,4 +69,5 @@ dev = [
     "ipykernel>=7.1.0",
     "langgraph-cli[inmem]>=0.1.71",
     "pytest>=8.3.5",
+    "ruff>=0.14.2",
 ]
