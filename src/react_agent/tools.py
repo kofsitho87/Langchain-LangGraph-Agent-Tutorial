@@ -22,7 +22,9 @@ from typing_extensions import Annotated
 from react_agent.context import Context
 from react_agent.utils import get_service
 
-calendar = GoogleCalendar("kofsitho@gmail.com")
+calendar = GoogleCalendar(
+    "kofsitho@gmail.com", token_path="token.pickle", credentials_path="credentials.json"
+)
 
 
 @tool
